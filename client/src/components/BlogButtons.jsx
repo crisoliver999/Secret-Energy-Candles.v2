@@ -39,6 +39,7 @@ export default function BlogButtons() {
         minWidth: 300,
         width: "100%",
       }}
+      mb="2rem"
     >
       {images.map((image) => (
         <ImageButton

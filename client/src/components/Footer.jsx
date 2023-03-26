@@ -77,12 +77,10 @@ const Footer = () => {
         <Box
           width="80%"
           height="70%"
-          margin="auto"
           backgroundColor="#ffffff"
           sx={{
             display: "flex",
             flexDirection: "column",
-
             position: "absolute",
             top: "50%",
             left: "50%",

@@ -1,10 +1,11 @@
-import { Box, Pagination } from "@mui/material";
+import { Box, Pagination, Typography } from "@mui/material";
 import Container from "components/Container";
-import BlogButtons from "../../components/BlogButtons";
 import BlogPost from "components/BlogPost";
 
+import { useTheme } from "@mui/material/styles";
 import logo from "assets/imgs/secretenergycandleslogo.png";
 import img10 from "assets/imgs/IMG_8768-Edit.jpg";
+import imgCandles from "assets/imgs/IMG_8727.jpg";
 
 const posts = [
   {
@@ -33,7 +34,9 @@ const posts = [
   },
 ];
 
-const Blog = () => {
+const BlogCandles = () => {
+  const theme = useTheme();
+
   return (
     <Container flexDirection="column" gap={3}>
       <Box
@@ -46,13 +49,31 @@ const Blog = () => {
         width="100%"
         height="500px"
         sx={{
-          backgroundImage: `url(${img10})`,
+          backgroundImage: `url(${imgCandles})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          backgroundPosition: "bottom",
+          backgroundPosition: "center",
         }}
-      ></Box>
-      <BlogButtons />
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        mb='2rem'
+      >
+        <Typography
+          variant="h2"
+          p="1rem 1.5rem"
+          sx={{
+            lineHeight: "1.2",
+            backgroundColor: theme.palette.secondary.main,
+            color: theme.palette.primary.main,
+            zIndex: 9999,
+            letterSpacing: "2px",
+            textTransform: "uppercase",
+          }}
+        >
+          AS NOSSAS VELAS
+        </Typography>
+      </Box>
 
       {posts.map((post, i) => (
         <BlogPost
@@ -69,4 +90,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogCandles;
